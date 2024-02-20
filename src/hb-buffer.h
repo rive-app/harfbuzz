@@ -165,8 +165,10 @@ typedef enum { /*< flags >*/
   HB_GLYPH_FLAG_DEFINED				= 0x00000007 /* OR of all defined flags */
 } hb_glyph_flags_t;
 
+#ifndef HB_NO_EXTERN_HELPERS
 HB_EXTERN hb_glyph_flags_t
 hb_glyph_info_get_glyph_flags (const hb_glyph_info_t *info);
+#endif
 
 #define hb_glyph_info_get_glyph_flags(info) \
 	((hb_glyph_flags_t) ((unsigned int) (info)->mask & HB_GLYPH_FLAG_DEFINED))
