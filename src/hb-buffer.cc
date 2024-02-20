@@ -1678,6 +1678,7 @@ hb_buffer_has_positions (hb_buffer_t  *buffer)
   return buffer->have_positions;
 }
 
+#ifndef HB_NO_EXTERN_HELPERS
 /**
  * hb_glyph_info_get_glyph_flags:
  * @info: a #hb_glyph_info_t
@@ -1694,6 +1695,7 @@ hb_glyph_flags_t
 {
   return hb_glyph_info_get_glyph_flags (info);
 }
+#endif
 
 /**
  * hb_buffer_reverse:

@@ -1156,6 +1156,7 @@ hb_variation_to_string (hb_variation_t *variation,
   buf[len] = '\0';
 }
 
+#ifndef HB_NO_EXTERN_HELPERS
 /**
  * hb_color_get_alpha:
  * @color: an #hb_color_t we are interested in its channels.
@@ -1219,6 +1220,7 @@ uint8_t
 {
   return hb_color_get_blue (color);
 }
+#endif
 
 /**
  * hb_malloc:
@@ -1271,7 +1273,6 @@ void* hb_realloc(void *ptr, size_t size) { return hb_realloc_impl (ptr, size); }
  * Since: 11.0.0
  **/
 void  hb_free(void *ptr) { hb_free_impl (ptr); }
-
 
 /* If there is no visibility control, then hb-static.cc will NOT
  * define anything.  Instead, we get it to define one set in here
