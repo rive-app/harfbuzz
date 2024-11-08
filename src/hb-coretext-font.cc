@@ -35,9 +35,7 @@
 #include "hb-font.hh"
 #include "hb-machinery.hh"
 
-#if (defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 1080) \
-    || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 60000) \
-    || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 90000)
+#if MAC_OS_X_VERSION_MIN_REQUIRED < 101100 && !defined(RIVE_APPLETVOS) && !defined(RIVE_APPLETVOS_SIMULATOR)
 #  define kCTFontOrientationDefault kCTFontDefaultOrientation
 #  define kCTFontOrientationHorizontal kCTFontHorizontalOrientation
 #  define kCTFontOrientationVertical kCTFontVerticalOrientation
