@@ -34,7 +34,7 @@
 #include "hb-font.hh"
 #include "hb-machinery.hh"
 
-#if MAC_OS_X_VERSION_MIN_REQUIRED < 101100
+#if MAC_OS_X_VERSION_MIN_REQUIRED < 101100 && !defined(RIVE_APPLETVOS) && !defined(RIVE_APPLETVOS_SIMULATOR)
 #  define kCTFontOrientationDefault kCTFontDefaultOrientation
 #endif
 
